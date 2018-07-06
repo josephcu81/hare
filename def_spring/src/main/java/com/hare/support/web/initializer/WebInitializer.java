@@ -15,18 +15,17 @@ import com.hare.support.web.config.DispatcherConfig;
 
 public class WebInitializer implements WebApplicationInitializer  {
 	
-	private final String CONFIG_LOCATION = "com.hare.support.web.config"; 
 	@Override
 	public void onStartup(ServletContext servletContext) throws ServletException {
-		// dispatcher servlet 구현
+		// dispatcher servlet
 		registerDispatcherServlet(servletContext);
-		// filter 구현
+		// filter
 		registerCharacterEncodingFilter(servletContext);
 		
 	}
 	
 	/**
-	 * encoding filter 설정
+	 * encoding filter
 	 * @param servletContext
 	 */
 	private void registerCharacterEncodingFilter(ServletContext servletContext) {
@@ -35,11 +34,11 @@ public class WebInitializer implements WebApplicationInitializer  {
 	}
 	
 	/**
-	 * dispatcher Servlet 설정
+	 * dispatcher Servlet
 	 * @param servletContext
 	 */
 	private void registerDispatcherServlet(ServletContext container) {
-		// spring javadoc api 기준
+		// spring javadoc api
 		// 1. create the root String application context
 		AnnotationConfigWebApplicationContext rootContext = new AnnotationConfigWebApplicationContext();
 		rootContext.register(AppConfig.class);

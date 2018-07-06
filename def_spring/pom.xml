@@ -9,7 +9,7 @@
 	<name>SPRING_PJ</name>
 
 	<properties>
-		<spring.version>4.0.1.RELEASE</spring.version>
+		<spring.version>4.0.1.RELEASE</spring.version>		
 	</properties>
 	
 	<dependencies>
@@ -57,7 +57,26 @@
 		</dependency>
 	</dependencies>
 	<build>
-       	<finalName>springPj</finalName>
+       	<finalName>springPj</finalName>       	
+       	<plugins>
+       		<!-- settign compiler version -->
+       		<plugin>
+       			<artifactId>maven-compiler-plugin</artifactId>
+       			<version>3.1</version>
+       			<configuration>
+       				<source>1.8</source>
+       				<target>1.8</target>
+       			</configuration>
+       		</plugin>
+       		<!-- setting war plugin -->
+       		<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+		    </plugin>
+       	</plugins>
    	</build>
 
 </project>
